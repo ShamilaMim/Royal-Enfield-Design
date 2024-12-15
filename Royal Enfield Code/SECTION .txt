@@ -1,0 +1,29 @@
+SECTION A:
+
+COLOUR: FDB4A1, FAFAFA(WHITE)
+WIDTH: 1440
+HEIGHT: 875
+
+Royal Enfield Font: Tomorrow, Bold, 600
+
+Eclipse width-height: 54
+
+SECTION B:
+
+COLOUR: 8F987E, FAFAFA(WHITE)
+WIDTH: 1440
+HEIGHT: 875
+
+Royal Enfield Font: Tomorrow, Bold, 600
+
+Eclipse width-height: 54
+
+SECTION C:
+
+COLOUR: 03522F, FAFAFA(WHITE)
+WIDTH: 1440
+HEIGHT: 875
+
+Royal Enfield Font: Tomorrow, Bold, 600
+
+Eclipse width-height: 54

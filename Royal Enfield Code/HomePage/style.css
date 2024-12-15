@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #51ADBD;
+}
+
+.center-text {
+    font-size: 4.5rem; /* 72px ÷ 16 */
+    font-family: "Tomorrow", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3125rem; /* 5px ÷ 16 */
+    color: white;
+}

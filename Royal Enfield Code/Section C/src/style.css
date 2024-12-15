@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-A: #51ADBD;
+    --text-color: #FFFFFF;
+    --text-x: 20%;
+    --text-y: -25%;
+    --text-r: -24.19deg;
+    --ellipse-length: 1.875rem;
+    --before-position-X: 100%;
+    --after-position-X: 50%;
+    --transition-time: 0.8s;
+    --before-hover-scale: 0.2;
+    --after-hover-scale: 1;
+    --animation-time: 5s;
+    --first-delay: 2s;
+    --alternative-delay: calc(var(--first-delay) + var(--animation-time) + 5s);
+}
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.grid-1 {
+    width: 8%;
+}
+
+.grid-2 {
+    width: 16.66%;
+}
+
+.grid-3 {
+    width: 25%;
+}
+
+.grid-4 {
+    width: 33.32%;
+}
+
+.grid-6 {
+    width: 50%;
+}
+
+.grid-7 {
+    width: 58.31%;
+}
+
+.grid-8 {
+    width: 66.64%;
+}
+
+.grid-9 {
+    width: 75;
+}
+
+.grid-10 {
+    width: 83.3%;
+}
+
+.grid-11 {
+    width: 91.63%;
+}
+
+.grid-12 {
+    width: 100%;
+}
+
+.C {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-A);
+    overflow: hidden;
+}
+
+.bg-img {
+
+    position: absolute;
+    height: 100vh;
+    opacity: 0.8;
+}
+
+.bg-img img {
+
+    height: 100%;
+    width: 100%;
+}
+
+/* Rectangle Image as Background */
+.rectangle-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Royal Image on top of Rectangle Image */
+.royal-image {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    transform: translateX(-50%) rotate(-10deg);
+    /* Adds diagonal alignment */
+    width: 80%;
+    height: auto;
+    z-index: -1;
+}
+
+/* Ellipse Image */
+.ellipse {
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--ellipse-length);
+    height: var(--ellipse-length);
+    z-index: 1;
+}
+
+.ellipse img {
+
+    width: 100%;
+    height: 100%;
+}
+
+.product-image {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1.18/1;
+    z-index: 1;
+}
+
+/* Card */
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.card-img {
+
+    aspect-ratio: 1/1.21;
+    transition: all var(--transition-time);
+
+}
+
+/* Side Card */
+
+.side-card {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(50%);
+    aspect-ratio: 1/0.5;
+}
+
+.left-card {
+
+    position: absolute;
+    transform: translateX(var(--before-position-X)) translateY(-175%) scale(var(--before-hover-scale));
+    transition: all var(--transition-time);
+    opacity: 0;
+    
+}
+
+.left-card-plate{
+
+    backdrop-filter: blur(5px);
+    display: inline-block;
+    width: 146px;
+    height: 151px;
+    clip-path: polygon(13% 0, 100% 0, 100% 87%, 87% 100%, 0 100%, 0 13%);
+    background-color: rgba(255,255,255,0.3);
+}
+
+.right-card {
+
+    position: absolute;
+    transform: translateX(var(--before-position-X)) translateY(25%) scale(var(--before-hover-scale));
+    transition: all var(--transition-time);
+    opacity: 0;
+}
+
+.right-card-plate{
+
+    backdrop-filter: blur(5px);
+    display: inline-block;
+    width: 146px;
+    height: 151px;
+    background-color: rgba(255,255,255,0.3);
+    clip-path: polygon(0 0, 87% 0, 100% 13%, 100% 100%, 13% 100%, 0 87%);
+}
+
+.counter-text {
+
+    position: absolute;
+    left: 10%;
+    top: 0;
+    font-size: 72px;
+    font-family: "Tomorrow", sans-serif;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.product-name,
+.product-price {
+
+    position: absolute;
+    left: 10%;
+    bottom: 12%;
+    color: #FFFFFF;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.product-price {
+
+    left: 28%;
+
+}
+
+.water-mark {
+    width: 140%;
+    height: 100%;
+    position: absolute;
+    /* transform: rotate(-15deg); */
+    transform: translate(var(--text-x), var(--text-y)) rotate(var(--text-r));
+}
+
+h2 {
+    font-size: 320pt;
+    font-family: "Tomorrow", sans-serif;
+    font-weight: 600;
+    font-style: bold;
+    color: var(--text-color);
+    opacity: 0.1;
+    display: flex;
+    gap: 3.125rem; /* Adds spacing between Royal and E */
+    animation: royalAnimation var(--animation-time) var(--first-delay) linear forwards, alternativeAnimation var(--animation-time) var(--alternative-delay) linear forwards;
+
+}
+
+.text-royal, .text-enfield {
+    display: inline-block;
+    gap: 1rem;
+}
+
+.product-image:hover .card-img {
+
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+.product-image:hover .left-card {
+    transform: translateX(var(--after-position-X)) translateY(-120%) scale(var(--after-hover-scale));
+    opacity: 1;
+}
+
+.product-image:hover .right-card {
+    transform: translateX(var(--after-position-X)) translateY(0%) scale(var(--after-hover-scale));
+    opacity: 1;
+}
+
+@keyframes royalAnimation {
+    0% {
+
+        transform: translateX(0%);
+    }
+
+
+    25% {
+
+        transform: translateX(-7%) ;
+    }
+
+    50% {
+
+        transform: translateX(-14%) ;
+    }
+
+    75% {
+
+        transform: translateX(-21%) ;
+    }
+
+    100% {
+
+        transform: translateX(-25%) ;
+    }
+}
+
+@keyframes alternativeAnimation {
+    0% {
+
+        transform: translateX(-25%);
+    }
+
+
+    25% {
+
+        transform: translateX(-18.75%) ;
+    }
+
+    50% {
+
+        transform: translateX(-12.5%) ;
+    }
+
+    75% {
+
+        transform: translateX(-6.25%) ;
+    }
+
+    100% {
+
+        transform: translateX(0%) ;
+    }
+}
